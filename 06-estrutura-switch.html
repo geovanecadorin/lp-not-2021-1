@@ -23,27 +23,46 @@
             Efetue o cálculo apropriado de acordo com o operador informado
             e informe o resultado usando document.write().
         
-        //MINHA RESPOTA
-        let num1 = parseFloat(prompt('Digite o 1º Nº!'))
-        let num2 = parseFloat(prompt('Digite o 2º Nº!'))
-        let sinal = prompt('Digite o operador matemático')
-        if (sinal == '+')
-        alert(num1 + num2)
-        else if (sinal == '-')
-        alert(num1 - num2)
-        else if (sinal == '*')
-        alert(num1 * num2)
-        else (sinal == '/') 
-        alert(num1 / num2)
         */
-
-//Resposta do professor:
 let num1 = parseFloat(prompt('Digite o 1º Nº!'))
 let num2 = parseFloat(prompt('Digite o 2º Nº!'))
 let sinal = prompt('Digite o operador matemático')
 
 if(isNaN(num1) || isNaN(num2)) {
     alert('ERRO: Os valores informados não correspondem a números válidos!')
+}
+else {
+    //swutch..case é uma estrutura de decisão que compara uma unica variavel
+    //contra uma serie de valores
+
+    switch(sinal){
+        case '+':
+            document.write(`${num1} + ${num2} é igual a ${num1 + num2}`)
+            break //interrompe a execução do switch
+
+        case '-':   
+            document.write(`${num1} - ${num2} é igual a ${num1 - num2}`)
+            break
+
+        case '*': //case vazio
+        case 'X': //case vazio   
+        case 'x':
+            document.write(`${num1} * ${num2} é igual a ${num1 * num2}`)
+            break
+
+        case '/':
+        case ':':
+            document.write(`${num1} / ${num2} é igual a ${num1 / num2}`)
+            break
+
+        default: //else do switch 
+            alert('ERRO: o sinal é invalido!')   
+    }   
+}
+
+
+
+/*    
 }    
 else if(sinal === '+') {
     document.write(`${num1} + ${num2} é igual a ${num1 + num2}`)
@@ -60,6 +79,7 @@ else if(sinal === '/' || sinal === ':') {
 else {
     alert('ERRO: o sinal é invalido!')
 }
+*/
 
     </script>
 </head>
