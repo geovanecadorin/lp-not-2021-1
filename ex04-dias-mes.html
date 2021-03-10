@@ -23,6 +23,37 @@
             * FEVEREIRO: 28 ou 29 dias (em anos bissextos)
         */
 
+let mes = parseInt(prompt('Digite o Mês entre 1 e 12:'))
+
+if(isNaN(mes) || mes < 1 || mes > 12) {
+    alert('ERRO: O valor informado não correspondem a um mês valido!')
+}
+else {
+    
+    switch(mes){
+        case 1:  //Janeiro
+        case 3:  //Março
+        case 5:  //Maio
+        case 7:  //Julho
+        case 8:  //Agosto
+        case 10: //Outubro
+        case 12: //Dezembro
+            alert('Esse mês possui 31 dias!')
+            break
+        case 4:  //Abril
+        case 6:  //Junho
+        case 9:  //Setembro
+        case 11: //Novembro
+            alert('Esse mês possui 30 dias!')
+            break
+
+        //case (((mes*12) % 4 == 0) && (((mes*12) % 100 != 0) || ((mes*12) % 400 == 0))
+
+        default: //Fevereiro
+            alert('O mês informado pode ter 28 ou 29 dias (em anos bissextos)!')   
+            }
+}
+
     </script>
 </head>
 <body>

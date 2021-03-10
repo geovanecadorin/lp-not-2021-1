@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Modelo</title>
+    <script>
+        //Ativa verificações adicionais de variáveis.
+        //Modo "chato" do JavaScript
+        'use strict'
+
+        //Loops ou estruturas de repetição são recursos que toda linguagem de programação
+        //disponibiliza para que instruções possam ser executadas mais de uma vez.
+
+        //1) Loop while
+
+        //Pedir ao usuario que informe varios numeros na sequencia e vamos somar até que ele informe o valor 0.
+        //Depois disso, vamos apresentar a soma.
+
+        let soma = 0, num
+
+        while(num !== 0) {
+            //Number tem o mesmo efeito que parseFloat
+            num = Number(prompt('Informe um numero para somar ou 0 para terminar:'))
+            
+            if(! isNaN(num)) { //Se for um numero valido
+                soma += num //Equivale a: soma = soma + num
+            }
+        }    
+
+        alert(`A soma dos numeros informados é ${soma}.`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
