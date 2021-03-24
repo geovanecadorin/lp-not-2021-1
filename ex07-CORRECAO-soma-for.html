@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 07 - Geovane Cadorin</title>
+    <title>Modelo de documento HTML</title>
     <script>
         // 'use strict' impede que variáveis sejam declaradas
         // sem o uso de let, var ou const
@@ -12,6 +12,7 @@
         'use strict'
         
         /*
+            
             Peça ao usuário para informar dois números inteiros diferentes.
             Use do..while para garantir que os números sejam válidos e diferentes
             entre si.
@@ -20,27 +21,28 @@
             os dois valores informados (inclusive).            
         */
 
-        //informar dois números inteiros diferentes
-        let num1, num2, soma = 0
+        let num1, num2, menor, maior, soma = 0
 
         do {
-            num1 = Number(prompt('Informe o primeiro numero: '))
-            num2 = Number(prompt('Informe o segundo numero: '))
-                
-            if(isNaN(num1) || isNaN(num2) || num1 === num2) {
-                alert('Os numeros informados não são validos!')
+            num1 = parseInt(prompt('Informe um número inteiro:'))
+            num2 = parseInt(prompt('Informe outro número inteiro, diferente do primeiro:'))
+        } while(isNaN(num1) || isNaN(num2) || num1 === num2)
 
-            }
-                  
-        } while(num1 !== 0 || num2 !== 0 || soma !== 0)
+        if(num1 > num2) {
+            maior = num1
+            menor = num2
+        }
+        else {
+            maior = num2
+            menor = num1
+        }
 
-            for(let i = num1; i <= num2; i ++) {                        
-            soma += soma + i;
-            }
-            document.write(i +=)
-               
-        alert(`A soma dos numeros informados é ${soma}.`)
-        
+        for(let i = menor; i <= maior; i++) {
+            soma += i
+        }
+
+        alert(`A soma dos números entre ${menor} e ${maior} é ${soma}.`)
+
 
     </script>
 </head>
