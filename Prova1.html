@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova1</title>
+    <script>
+        //Ativa verificações adicionais de variáveis.
+        //Modo "chato" do JavaScript
+        'use strict'
+
+        /*
+          1) Duplique o arquivo _modelo.html e salve a cópia como Prova1.html. OK
+
+          2) Declare uma função que não recebe argumento. Dentro dela, usando um loop for, imprima
+             com document.write() a lista dos quilômetros em que havará estações de embarque e
+             desembarque, no sentido Franca – São Paulo, lembrando que o km 1 fica em São Paulo e o
+             km 400, em Franca. Essa função não deverá ter valor de retorno. OK
+
+          3) Obtenha do usuário um número de quilômetro. Valide a entrada do usuário, repetindo a
+             pergunta até que ele informe um número válido e que esteja entre 1 e 400 (inclusive). OK
+
+          4) Utilizando a estrutura switch, verifique se o quilômetro informado pelo usuário possui
+             alguma das comodidades disponíveis ao longo da linha e, se for o caso, exiba-a usando
+             alert(). Se não houver nada no quilômetro, exiba 'Nada aqui.'. OK
+
+          5) Efetue a chamada à função declarada em 2) para exibir os quilômetros com estações.
+
+          6) Ao terminar, faça o download do arquivo Prova1.html e envie-o conforme descrito nas
+             Instruções Gerais.
+         */    
+        
+        let extensao
+
+        do{
+            extensao = parseFloat(prompt('Informe o km da rodovia (Entre 1 e 400)'))
+        }while(isNaN(extensao) || extensao <= 1 || extensao >= 400)
+
+        for(let km=1; km <= extensao; km++){
+           if (km % 50 === 0) {
+                document.write(`No km ${km} existe uma estação de embarque e desembarque!.<br>`)
+            }
+         }
+         switch(extensao){
+            case 98:
+            case 190:
+            case 283:
+            case 379:    
+                alert(`Neste km voce encontrará um Posto de Conveniencia da Rede Mil Grau.`)
+            break
+
+            case 155:
+            case 355:
+                alert(`Neste km voce encontrará Postos da Polícia Ferroviária.`)
+                break
+            case 137:
+                alert(`Neste km voce encontrará Aeroporto Interplanetário de Virapratos.`)
+                break
+            case 204:    
+                alert(`Neste km voce encontrará Hotel Cacique Internacional 6 estrelas.`)
+                break
+            case 311:
+                alert(`Neste km voce encontrará Boleli shopping center.`)
+                break
+            case 356:
+                alert(`Neste km voce encontrará Acesso ao Acqua Park Unidade III.`)
+                break
+            default:
+            alert('Nada aqui!')    
+         }
+         
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
