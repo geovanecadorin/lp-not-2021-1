@@ -77,15 +77,15 @@
     </div>
 
     <!--
-        Primeiro nome = Guilherme
-        Sobrenome = Ramos
-        Forma de tratamento = Cremosíssimo
+        Primeiro nome = Geovane
+        Sobrenome = Cadorin
+        Forma de tratamento = Vossa Majestade
         Sexo = Masculino
         Hora do dia = 14
         Opção de exibição = Exibir com alert()
         Opção de exibicação = Exibir com documento
 
-        Boa tarde, cremosíssimo Guilherme Ramos! Como posso ser útil?
+        Boa tarde, Vossa Majestada Geovane Cadorin! Como posso ser útil?
     -->
         <script>
         // Ativa verificações adicionais de variáveis
@@ -134,7 +134,7 @@
                 return false
             }
 
-            if((elAlert.checked) && (!elDocument.checked)){
+            if((!elAlert.checked) && (!elDocument.checked)){
                 alert('Selecione pelo menos uma das opções de exibição.')
                 elAlert.focus()
                 return false
@@ -144,7 +144,7 @@
 
         function exibirMensagem() {
             if(validar()){ // Se o formulario for valido (tiver retornado true)
-                //Boa tarde, cremosíssimo Guilherme Ramos! Como posso ser útil?
+                //Boa tarde, Vossa Majestade Geovane Cadorin! Como posso ser útil?
                 let mensagem
 
                 let horaDia = parseInt(elHoraDia.value)
