@@ -11,7 +11,9 @@
         // programação
         'use strict'
         
-/*          O ano é 2119. A prefeita Enza Valentina Faleiros Trajano 
+        /*
+        
+            O ano é 2119. A prefeita Enza Valentina Faleiros Trajano 
             Bittar da Silva inaugura a primeira linha do Metrô de Franca, 
             no sentido norte-sul, com as seguintes estações: Santa Teresinha,
             Estação, Centro, Jardim Lima e Aeroporto I.
@@ -19,53 +21,52 @@
             1) Crie um vetor vazio e depois insira as estações no
                 vetor. Faça um loop for TRADICIONAL para exibir as 
                 estações e depois passe um traço horizontal (<hr>).
-*/
+        */
 
-            let estacoes = []
-            estacoes.push('Santa Teresinha','Estação','Centro','Jardim Lima','Aeroporto I')
-            for(let i = 0; i < estacoes.length; i++) {
-            document.write(estacoes[i] + '<br>')
+        // Criando um vetor vazio
+        const linha = []    // Alternativa: const linha = Array()
+        
+        // Inserindo as estações (nesse caso, no final do vetor)
+        linha.push('Santa Teresinha')
+        linha.push('Estação')
+        linha.push('Centro')
+        linha.push('Jardim Lima')
+        linha.push('Aeroporto I')
+        // Alternativa:
+        // linha.push('Santa Teresinha', 'Estação', 'Centro', 'Jardim Lima', 'Aerporto I')
+
+        // Loop for tradicional
+        for(let i = 0; i < linha.length; i++) {
+            document.write(linha[i] + '<br>')
         }
+        document.write('<hr>')  // Traço
 
-        document.write('<hr>')
-
-        /*Resultado:
-            0 Santa Teresinha
-            1 Estação
-            2 Centro
-            3 Jardim Lima
-            4 Aeroporto I
-        */    
-
-/*          No ano seguinte, a linha foi expandida com a inauguração
+        /*
+                
+            No ano seguinte, a linha foi expandida com a inauguração
             das estações City Petrópolis, no extremo norte, e Aeroporto
             IV, no extremo sul.
             
             2) Insira as novas estações no vetor nas posições apropriadas.
                 Faça um loop FOR..OF para exibir as estações e depois
                 passe um traço horizontal (<hr>).
-*/
-
-            estacoes.unshift('City Petrópolis') //Inserir no Inicio
-            estacoes.push('Aeroporto IV')       //Inserir no Final
-
-            for(let elemento of estacoes) {
-            document.write(elemento + '<br>')
-        }
-
-        document.write('<hr>')
-
-        /*Resultado:
-        0 City Petrópolis
-        1 Santa Teresinha
-        2 Estação
-        3 Centro
-        4 Jardim Lima
-        5 Aeroporto I
-        6 Aeroporto IV
         */
 
-/*          Já em 2125, foi criada a estação Vila Imperador, entre
+        // Inserindo estação no extremo norte (início do vetor)
+        linha.unshift('City Petrópolis')
+
+        // Inserindo estação no extremo sul (fim do vetor)
+        linha.push('Aeroporto IV')
+
+        // Loop for..of
+        for(let estacao of linha) {
+            document.write(estacao + '<br>')
+        }
+        document.write('<hr>')  // Traço
+
+        /*
+                
+            Já em 2125, foi criada a estação Vila Imperador, entre
             as estações Santa Teresinha e Estação, para atender à grande
             demanda da maior universidade da cidade, a Fatec de Franca.
             Um ano depois, a estação Jardim Alvorada passou a funcionar
@@ -74,40 +75,54 @@
             3) Insira as novas estações no vetor nas posições apropriadas.
                 Faça um loop for TRADICIONAL EM SENTIDO INVERSO para exibir
                 as estações e depois passe um traço horizontal (<hr>).
-*/
 
-            estacoes.splice(2, 0, 'Vila Imperador')
-            estacoes.splice(6, 0, 'Jardim Alvorada')
+        */
 
-            for(let i = estacoes.length - 1; i >= 0; i--) {
-            document.write(estacoes[i] + '<br>')
+        // Inserindo a estação Vila Imperador na posição atualmente
+        // ocupada pela estação Estação (posição 2)
+        linha.splice(2, 0, 'Vila Imperador')
+
+        // Alternativa 1: (se não soubermos antes a posição de Estação)
+        // let posicao = linha.indexOf('Estação')
+        // linha.splice(posicao, 0, 'Vila Imperador')
+
+        // Alternativa 2:
+        // linha.splice(linha.indexOf('Estação'), 0, 'Vila Imperador')
+
+        // Inserindo a estação Jardim Alvorada no lugar ocupado pela
+        // estação Aeroporto I
+        linha.splice(linha.indexOf('Aeroporto I'), 0, 'Jardim Alvorada')
+
+        // Loop for tradicional em sentido inverso
+        for(let i = linha.length - 1; i >= 0; i--) {
+            document.write(linha[i] + '<br>')    
         }
+        document.write('<hr>')  // Traço
 
-        document.write('<hr>')
 
-
-/*          Em 2130, a estação Centro foi desativada, e em seu lugar duas
+        /*        
+            Em 2130, a estação Centro foi desativada, e em seu lugar duas
             novas estações entraram em funcionamento: as estações 9 de Julho
             e Champagnat.
             
             4) Modifique o vetor de acordo com as alterações.
                 Faça um loop for TRADICIONAL para exibir as estações e depois
                 passe um traço horizontal (<hr>).
-*/           
-            /*Da pra fazer de 2 jeitos:
-            estacoes.splice(4, 1)
-            estacoes.splice(5, 0, '9 de Julho')
-            estacoes.splice(6, 0, 'Champagnat')*/
 
-            estacoes.splice(4, 2, '9 de Julho', 'Champagnat')
-            
-            for(let i = 0; i < estacoes.length; i++) {
-            document.write(estacoes[i] + '<br>')
+        */
+        
+        // Substituição: sai Centro e entra 9 de Julho e Champagnat no lugar
+        linha.splice(linha.indexOf('Centro'), 1, '9 de Julho', 'Champagnat')
+
+        // Loop for tradicional
+        for(let i = 0; i < linha.length; i++) {
+            document.write(linha[i] + '<br>')
         }
+        document.write('<hr>')  // Traço
 
-        document.write('<hr>')
-
-/*          Em 2133, no entanto, Franca entrou em guerra com os 
+        /*
+                
+            Em 2133, no entanto, Franca entrou em guerra com os 
             restinguenses, que invadiram e destruíram as duas estações 
             mais ao sul do metrô de Franca. Neste mesmo ano, em meio
             à crise, foi fechada a estação Santa Teresinha.
@@ -115,17 +130,27 @@
             5) Modifique o vetor de acordo com as alterações.
                 Faça um loop FOR...OF para exibir as estações e depois
                 passe um traço horizontal (<hr>).            
-*/
+        */
 
-            estacoes.splice(1, 1)
-            estacoes.splice(6, 2)
-            
-            for(let elemento of estacoes) {
-            document.write(elemento + '<br>')
+        // Removendo as duas estações mais ao sul (as duas últimas)
+        linha.pop() // Tira a última
+        linha.pop() // Tira a penúltima
+
+        // Alternativa 1:
+        // linha.splice(linha.indexOf('Aeroporto I'), 2)
+
+        // Alternativa 2:
+        // linha.splice(linha.length - 2, 2)
+
+        // Removendo a estação Santa Teresinha
+        linha.splice(linha.indexOf('Santa Teresinha'), 1)
+
+        // Loop for..of
+        for(let parada of linha) {
+            document.write(parada + '<br>')
         }
-
-        document.write('<hr>')
-
+        document.write('<hr>')  // Traço     
+       
     </script>
 </head>
 <body>
